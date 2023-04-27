@@ -12,12 +12,32 @@
   grid-template-columns: repeat(3, 250px);
 }
 
+@media (max-width: 992px) {
+  .tracks {
+    grid-template-columns: repeat(2, 250px);
+  }
+}
+
+@media (max-width: 768px) {
+  .tracks {
+    width: 100%;
+    grid-template-columns: minmax(250px, 1fr);
+  }
+}
+
 .track {
   width: 250px;
   height: calc(250px - 50px);
   margin-top: 40px;
   position: relative;
 }
+
+@media (max-width: 768px) {
+  .track {
+    width: 100%;
+  }
+}
+
 
 .track .wrapper {
   height: 100%;

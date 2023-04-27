@@ -9,7 +9,6 @@ function Tracks() {
   return (
     <>
       {cards.map((obj, i) => {
-        console.log(obj.timeframes.daily.current);
         return (
           <div className="track" key={i}>
             <div className="wrapper">
