@@ -1,26 +1,15 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./Tracks.css";
+import data from "../data/data.json"
 
 function Tracks() {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState(data);
 
-  const getData = async () => {
-    const data = await axios({
-      method: "get",
-      url: "http://localhost:8000/cards",
-    });
-    setCards(data.data);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   return (
     <>
       {cards.map((obj, i) => {
-        console.log(obj);
+        console.log(obj.timeframes.daily.current);
         return (
           <div className="track" key={i}>
             <div className="wrapper">

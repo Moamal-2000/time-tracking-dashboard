@@ -3,8 +3,8 @@ import TracksContainer from "./TracksContainer";
 
 export default function Main() {
   return (
-    <div>
+    <main className="container">
       <TracksContainer />
-    </div>
+    </main>
   );
 }
