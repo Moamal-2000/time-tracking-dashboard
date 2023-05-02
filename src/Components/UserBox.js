@@ -1,20 +1,30 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import userImg from "../images/image-jeremy.png";
+import { TimeAdverbsContext } from "./TracksContainer";
 import "./UserBox.css";
+
+
 
 function UserBox() {
   const switcherRef = useRef(null);
   const buttonsRef = useRef([]);
   const [buttons, setButtons] = useState([]);
+  let timeAdverbState = useContext(TimeAdverbsContext);
+
 
 
 
   // Functions
-  function handleDailyClick() {}
+  function handleDailyClick() {
+  }
 
-  function handleWeeklyClick() {}
+  function handleWeeklyClick() {
+  }
 
-  function handleMonthlyClick() {}
+  function handleMonthlyClick() {
+  }
+
+
 
 
   // Use effect
@@ -27,17 +37,21 @@ function UserBox() {
 
 
 
-
   buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(btn => btn.classList.remove('active'))
+    btn.addEventListener("click", () => {
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      btn.classList.add("active");
 
-      btn.classList.add('active')
-    })
+      timeAdverbState = btn.textContent.toLowerCase();
+
+      const isDaily = btn.textContent.toLowerCase() === "daily";
+      const isWeekly = btn.textContent.toLowerCase() === "weekly";
+      const isMonthly = btn.textContent.toLowerCase() === "monthly";
+      if (isDaily) handleDailyClick();
+      else if (isWeekly) handleWeeklyClick();
+      else if (isMonthly) handleMonthlyClick();
+    });
   });
-
-
-
 
 
 
@@ -55,25 +69,13 @@ function UserBox() {
       </div>
 
       <div className="switcher-container" ref={switcherRef}>
-        <button
-          type="button"
-          className="daily-button"
-          onClick={() => handleDailyClick()}
-        >
+        <button type="button" className="daily-button">
           Daily
         </button>
-        <button
-          type="button"
-          className="weekly-button active"
-          onClick={() => handleWeeklyClick()}
-        >
+        <button type="button" className="weekly-button active">
           Weekly
         </button>
-        <button
-          type="button"
-          className="monthly-button"
-          onClick={() => handleMonthlyClick()}
-        >
+        <button type="button" className="monthly-button">
           Monthly
         </button>
       </div>
