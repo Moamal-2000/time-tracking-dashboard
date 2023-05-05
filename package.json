@@ -1,7 +1,7 @@
 {
   "name": "2023-2024",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://moamal-2000.github.io/time-tracking-dashboard/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
