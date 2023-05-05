@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.79d81c41.css",
-    "main.js": "/static/js/main.471cd742.js",
-    "static/media/image-jeremy.png": "/static/media/image-jeremy.71cd41f11bee24c1ded3.png",
-    "index.html": "/index.html",
-    "main.79d81c41.css.map": "/static/css/main.79d81c41.css.map",
-    "main.471cd742.js.map": "/static/js/main.471cd742.js.map"
+    "main.css": "/time-tracking-dashboard/static/css/main.0e4d9b56.css",
+    "main.js": "/time-tracking-dashboard/static/js/main.286cdd77.js",
+    "static/media/image-jeremy.png": "/time-tracking-dashboard/static/media/image-jeremy.71cd41f11bee24c1ded3.png",
+    "index.html": "/time-tracking-dashboard/index.html",
+    "main.0e4d9b56.css.map": "/time-tracking-dashboard/static/css/main.0e4d9b56.css.map",
+    "main.286cdd77.js.map": "/time-tracking-dashboard/static/js/main.286cdd77.js.map"
   },
   "entrypoints": [
-    "static/css/main.79d81c41.css",
-    "static/js/main.471cd742.js"
+    "static/css/main.0e4d9b56.css",
+    "static/js/main.286cdd77.js"
   ]
 }
