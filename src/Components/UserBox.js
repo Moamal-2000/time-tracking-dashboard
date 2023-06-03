@@ -8,11 +8,15 @@ function UserBox() {
   const buttonsRef = useRef([]);
   const [buttons, setButtons] = useState([]);
 
+
+
   useEffect(() => {
     const buttons = switcherRef.current.querySelectorAll("button");
     buttonsRef.current = Array.from(buttons);
     setButtons(buttons);
   }, []);
+
+
 
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -20,6 +24,8 @@ function UserBox() {
       btn.classList.add("active");
     });
   });
+
+
 
   return (
     <div className="user-box">

@@ -4,6 +4,8 @@ import data from "../data/data.json";
 export default function Daily() {
   const [cards, setCards] = useState(data);
 
+
+
   useEffect(() => {
     setCards(
       data.map((obj) => {
@@ -18,6 +20,8 @@ export default function Daily() {
       })
     );
   }, []);
+
+
 
   return (
     <>
