@@ -6,11 +6,13 @@ import Weekly from "./Weekly";
 
 function Tracks() {
   return (
+    <>
     <Routes>
-      <Route path="time-tracking-dashboard/" element={<Weekly />} />
-      <Route path="time-tracking-dashboard/daily" element={<Daily />} />
-      <Route path="time-tracking-dashboard/monthly" element={<Monthly />} />
+      <Route path="/" element={<Weekly />} />
+      <Route path="/daily" element={<Daily />} />
+      <Route path="/monthly" element={<Monthly />} />
     </Routes>
+    </>
   );
 }
 

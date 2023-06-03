@@ -35,17 +35,17 @@ function UserBox() {
       </div>
 
       <div className="switcher-container" ref={switcherRef}>
-        <Link to="time-tracking-dashboard/daily">
+        <Link to="/daily">
           <button type="button" className="daily-button">
             Daily
           </button>
         </Link>
-        <Link to="time-tracking-dashboard/">
+        <Link to="/">
           <button type="button" className="weekly-button active">
             Weekly
           </button>
         </Link>
-        <Link to="time-tracking-dashboard/monthly">
+        <Link to="/monthly">
           <button type="button" className="monthly-button">
             Monthly
           </button>
