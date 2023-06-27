@@ -1,26 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import data from "../data/data.json";
 
 export default function Daily() {
-  const [cards, setCards] = useState(data);
-
-
-
-  useEffect(() => {
-    setCards(
-      data.map((obj) => {
-        return {
-          ...obj,
-          timeframes: {
-            ...obj.timeframes,
-            current: obj.timeframes.daily.current,
-            previous: obj.timeframes.daily.previous,
-          },
-        };
-      })
-    );
-  }, []);
-
+  const [cards] = useState(data);
 
 
   return (

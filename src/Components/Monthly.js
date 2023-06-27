@@ -1,26 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import data from "../data/data.json";
 
 export default function Monthly() {
-  const [cards, setCards] = useState(data);
-
-
-
-  useEffect(() => {
-    setCards(
-      data.map((obj) => {
-        return {
-          ...obj,
-          timeframes: {
-            ...obj.timeframes,
-            current: obj.timeframes.monthly.current,
-            previous: obj.timeframes.monthly.previous,
-          },
-        };
-      })
-    );
-  }, []);
-
+  const [cards] = useState(data);
 
 
   return (

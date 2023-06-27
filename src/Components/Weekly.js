@@ -1,23 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import data from "../data/data.json";
 
 export default function Weekly() {
-  const [cards, setCards] = useState(data);
+  const [cards] = useState(data);
 
-  useEffect(() => {
-    setCards(
-      data.map((obj) => {
-        return {
-          ...obj,
-          timeframes: {
-            ...obj.timeframes,
-            current: obj.timeframes.weekly.current,
-            previous: obj.timeframes.weekly.previous,
-          },
-        };
-      })
-    );
-  }, []);
 
   return (
     <>
