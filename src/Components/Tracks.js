@@ -25,7 +25,7 @@ function Tracks() {
                 </header>
                 <time>{obj.timeframes[times].current}hrs</time>
                 <span className="last-time">
-                  {/* Last month - {obj.timeframes.[times].previous}hrs */}
+                  Last month - {obj.timeframes[times].previous}hrs
                 </span>
               </div>
             </div>
