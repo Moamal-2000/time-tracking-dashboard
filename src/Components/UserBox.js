@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { useTimesContext } from "../App";
 import userImg from "../images/image-jeremy.png";
 import "./UserBox.css";
 
@@ -7,6 +7,7 @@ function UserBox() {
   const switcherRef = useRef(null);
   const buttonsRef = useRef([]);
   const [buttons, setButtons] = useState([]);
+  const { setTimes } = useTimesContext();
 
 
 
@@ -14,16 +15,15 @@ function UserBox() {
     const buttons = switcherRef.current.querySelectorAll("button");
     buttonsRef.current = Array.from(buttons);
     setButtons(buttons);
-  }, []);
 
-
-
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      buttons.forEach((btn) => btn.classList.remove("active"));
-      btn.classList.add("active");
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        btn.classList.add("active");
+        setTimes(btn.textContent.toLowerCase());
+      });
     });
-  });
+  }, []);
 
 
 
@@ -41,21 +41,15 @@ function UserBox() {
       </div>
 
       <div className="switcher-container" ref={switcherRef}>
-        <Link to="/daily">
-          <button type="button" className="daily-button">
-            Daily
-          </button>
-        </Link>
-        <Link to="/">
-          <button type="button" className="weekly-button active">
-            Weekly
-          </button>
-        </Link>
-        <Link to="/monthly">
-          <button type="button" className="monthly-button">
-            Monthly
-          </button>
-        </Link>
+        <button type="button" className="daily-button">
+          Daily
+        </button>
+        <button type="button" className="weekly-button active">
+          Weekly
+        </button>
+        <button type="button" className="monthly-button">
+          Monthly
+        </button>
       </div>
     </div>
   );
