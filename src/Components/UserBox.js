@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useTimesContext } from "../App";
 import userImg from "../images/image-jeremy.png";
 import "./UserBox.css";
@@ -6,7 +6,6 @@ import "./UserBox.css";
 function UserBox() {
   const switcherRef = useRef(null);
   const buttonsRef = useRef([]);
-  const [buttons, setButtons] = useState([]);
   const { setTimes } = useTimesContext();
 
 
@@ -14,7 +13,6 @@ function UserBox() {
   useEffect(() => {
     const buttons = switcherRef.current.querySelectorAll("button");
     buttonsRef.current = Array.from(buttons);
-    setButtons(buttons);
 
     buttons.forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -23,7 +21,7 @@ function UserBox() {
         setTimes(btn.textContent.toLowerCase());
       });
     });
-  }, []);
+  }, [setTimes]);
 
 
 
